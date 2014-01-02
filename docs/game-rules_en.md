@@ -34,21 +34,35 @@ A round has the following stages:
 * Cards distrubtion will take place by dealer.
     1. In a game with 4 players (it will be called game of four), every player
        will get 6 cards.
-    2. In a game with 3 players, every player will get 8 cards.
+    2. In a game with 3 players, every player will get 7 cards, the rest of 3
+	cards will be taken by the winner of the biding. The winner of bidding 
+	must give a card(a poor card), to the opponents.
     3. In a game witn 2 players, every player will get 8 cards and 8 cards
        remain on the table (Cards face down).
 
+* At the first round, the game should choose a random dealer. The dealer will
+  change in clockwise order after each round.
 * Every player, counting clockwise from the first who recived the cards, will
   place a bid. The dealer should be the last to place the bid. The bidding
   process will be described later.
 * After the bidding ends, the game starts. The winner of the bidding is the one
-  who chooses the trump and will deal the first card (it must be a trump). 
-* The winner of a round is the one who starts the next round, by placing a card
-  on the table.
+  who chooses the trump (and take the 3 cards from the table if the game is
+  made with 3 players) and will deal the first card (it must be a trump). 
 * When the players have no more cards (note that all the players will always
   have the same number of cards), each player's score is computed.
 * The game proceeds to the next round, until the ending constraints are
   fulfilled.
+
+# A round will be valid and ready to start only when:
+    1. A player when it's his turn to bid, if the total number of cards points
+       (defined bellow in the table card table points) is less than 10, this 
+	   player have option to remake the round. 
+    2. After biding ends, the opponent team (in a game with three players, there
+       will be 2 opponents) must have at least one trump.
+	3. The biding value is greater than 0.
+
+	* In case when one of those rules are violated, the round will restart 
+	  with the same dealer, in the same order of biding.
 
 
 # The bidding
@@ -68,8 +82,8 @@ score after this round will be 4 - 9. The game goes on and the first team wins
 the bidding with two. If at the end of the round the first team has 102 card
 points and the second one 18 card points, the score will be 7 - 9. Note the
 difference from whist, where if you do not fulfill the bid, your score 
-decreases. Also, here is only one bet for every round. It is possible not to bid
-(or to bid 0).
+decreases. Also, here is only one bet for every round. You can bid 0 (or pass).
+
 
 # The points
 
